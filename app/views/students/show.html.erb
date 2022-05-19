@@ -9,6 +9,8 @@
 <br>
 <p><strong>Student has:</strong><%= @student.courses.count %> courses</p>
 <br>
+<p><strong>Number of Projects student working: </strong><%= @student.projects.count %>  </p>
+<br>
 <%= link_to "Back to Home", root_path %>
 <br>
 <%= link_to "Edit the Student", edit_student_path(@student) %>

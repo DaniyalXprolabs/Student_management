@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :projects
   root "students#index"
   resources :students
   resources :courses

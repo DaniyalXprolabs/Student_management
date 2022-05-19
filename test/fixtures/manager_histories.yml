@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  joining_date: 2022-05-19
+  total_experience: MyString
+  manager: one
+
+two:
+  joining_date: 2022-05-19
+  total_experience: MyString
+  manager: two
