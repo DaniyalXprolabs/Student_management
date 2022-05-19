@@ -5,6 +5,10 @@
 <br>
 <p><strong>Email:</strong><%= @student.email %></p>
 <br>
+<p><strong>Student has:</strong><%= @student.blogs.count %> blogs</p>
+<br>
+<p><strong>Student has:</strong><%= @student.courses.count %> courses</p>
+<br>
 <%= link_to "Back to Home", root_path %>
 <br>
 <%= link_to "Edit the Student", edit_student_path(@student) %>

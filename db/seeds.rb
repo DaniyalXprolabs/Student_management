@@ -15,7 +15,11 @@ student=Student.create(
   puts "Creating Student #{i+1}"
   Student.create(
     first_name:"Student #{i+1}",
-    last_name:"Lname #{i+1}",
+        last_name:"Lname #{i+1}",
     email: "student#{i+1}@gmail.com"
   )
+end
+Student.all.each do |student|
+  student.blogs.create(title:'Dummy Blog for student #{student.id}', content:"Custom Content Pending")
+  student.blogs.create(title:'Dummy Blog for student #{student.id}', content:"Custom Content Pending")
 end
