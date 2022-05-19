@@ -1,0 +1,13 @@
+<h1>Course Detail</h1>
+<br>
+<h2><%= @course.name %></h2>
+<br>
+<h3><%= @course.description %></h3>
+<br>
+<%= link_to "Edit the course", edit_course_path(@course) %>
+<br>
+<%= link_to "Delete the Course",  @course,method: :delete , data:{confirm:"Are you sure to delete student"} %>
+<br>
+<%= link_to 'Go to students', students_path %>
+<br>
+<%= link_to 'Go back to courses', courses_path %>

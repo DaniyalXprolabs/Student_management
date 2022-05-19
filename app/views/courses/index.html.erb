@@ -1,0 +1,7 @@
+<%= notice %>
+<h1>You can see all courses here</h1>
+<h2><%= link_to "Add a new Course", new_course_path %></h2>
+<% @courses.each do |c| %>
+  <h2><%= c.name %></h2>
+  <h3><%= link_to 'view', c %></h3>
+<% end %>

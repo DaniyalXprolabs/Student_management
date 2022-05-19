@@ -1,0 +1,14 @@
+<%= form_with model: @course do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div><br>
+
+  <div>
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+  </div><br>
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>
