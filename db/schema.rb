@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_20_123135) do
+ActiveRecord::Schema.define(version: 2022_05_23_065236) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "blogs", force: :cascade do |t|
     t.string "title"
@@ -21,6 +28,14 @@ ActiveRecord::Schema.define(version: 2022_05_20_123135) do
     t.integer "student_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "commentable_type"
+    t.integer "commentable_id"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -48,6 +63,15 @@ ActiveRecord::Schema.define(version: 2022_05_20_123135) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "events", force: :cascade do |t|
+    t.string "title"
+    t.string "venue"
+    t.string "address"
+    t.date "scheduled_at"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "manager_histories", force: :cascade do |t|
     t.date "joining_date"
     t.string "total_experience"
@@ -65,6 +89,13 @@ ActiveRecord::Schema.define(version: 2022_05_20_123135) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["department_id"], name: "index_managers_on_department_id"
+  end
+
+  create_table "news", force: :cascade do |t|
+    t.string "title"
+    t.boolean "is_live"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "projects", force: :cascade do |t|
