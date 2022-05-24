@@ -1,0 +1,18 @@
+<div class="container" style="margin: 30px; padding: 20px;">
+<h2 class="text-center">Statistics</h2>
+<div class="container">
+  <h2>Total number of Students : <%= @students.count %>  </h2>
+  <hr>
+  <h2>Total number of Courses : <%= @courses.count %>  </h2>
+  <hr>
+  <h2>Total number of Projects : <%= @projects.count %>  </h2>
+  <hr>
+  <h2>Total number of Male Students : <%= @tot_students["Male"] %>  </h2>
+  <hr>
+  <h2>Total number of Female Students : <%= @tot_students["Female"] %>  </h2>
+  <hr>
+  <h2>Total number of  Students whose gender is not verified: <%= @tot_students[nil] %>  </h2>
+  <hr>
+
+</div>
+</div>

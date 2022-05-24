@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   before_action :find_id, only: [:show,:destroy,:edit,:update]
   def index
     #Returning all Students
-    #@students=Student.all.order(:id)
+    @students=Student.all.order(:id)
     # Returning all students order by their first_name
     #@students=Student.order(:first_name).all
     # Returning all students whose id's are matching with given array
@@ -34,7 +34,8 @@ class StudentsController < ApplicationController
     #@students=Student.limit(5).order(last_name: :asc)
     # Showing student with second last ID
     #@students=Student.order(id: :desc).limit(1).offset(1)
-    @students=Student.where("id>10").order(:first_name).reverse_order
+    #@students=Student.where("id>10").order(:first_name).
+    #@students=Student.where(id:1..10).order(id: :asc)
 
 
 

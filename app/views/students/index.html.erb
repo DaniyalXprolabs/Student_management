@@ -1,42 +1,35 @@
 <%= notice %>
-<h2>Total number of Students : <%= @total_students %>  </h2>
+<div class="container text-center">
 <hr>
-<h2>Total number of Distinct students name: <%= @tot_students %>  </h2>
+<h4>Listing Students</h4>
+  <hr>
+  <button type="button" class="btn btn-success"><%= link_to "Add a new Student", new_student_path %></button>
 <hr>
-<h2>Number of Male students : <%= @gender["Male"] %>  </h2>
-<hr>
-<h2>Number of  students gender not verified: <%= @gender[nil] %>  </h2>
-<hr>
-<h2>Number of Female students : <%= @gender["Female"] %>  </h2>
-<hr>
-<h2><%= link_to "Go and Check Courses", courses_path %></h2>
-<hr>
-<h1>Listing Students</h1>
-<%= link_to "Add a new Student", new_student_path %>
-<br>
-<hr>
-<table>
-  <thead>
-  <tr>
-    <th>Student_ID</th>
-    <th>First_Name</th>
-    <th>Last_Name</th>
-    <th>Email</th>
-    <th>Gender</th>
-    <th>Action</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @students.each do |s| %>
-  <tr>
-    <td><%= s.id %></td>
-    <td><%= s.first_name %></td>
-    <td><%= s.last_name %></td>
-    <td><%= s.email %></td>
-    <td><%= s.gender %></td>
-    <td><%= link_to "View Student", s %></td>
-  </tr>
+</div>
+<div class="container">
+  <table class="table" style="font-size: 20px;">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Gender</th>
+      <th scope="col">View</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @students.each do |s| %>
+    <tr>
+      <th scope="row"><%= s.id %></th>
+      <td><%= s.first_name %></td>
+      <td><%= s.last_name %></td>
+      <td><%= s.email %></td>
+      <td><%= s.gender %></td>
+      <td><%= link_to "View Student", s %></td>
+    </tr>
+      <% end %>
+    </tbody>
+  </table>
 
-  <% end %>
-  </tbody>
-</table>
+</div>

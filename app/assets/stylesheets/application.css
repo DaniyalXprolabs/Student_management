@@ -13,3 +13,8 @@
  *= require_tree .
  *= require_self
  */
+#sticky-footer{
+    background-color: black;
+    color: whitesmoke;
+    font-size: 20px;
+}

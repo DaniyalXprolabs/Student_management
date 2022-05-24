@@ -1,7 +1,11 @@
+<div class="container">
 <%= notice %>
-<h1>You can see all courses here</h1>
-<h2><%= link_to "Add a new Course", new_course_path %></h2>
+  <hr>
+  <h3><%= link_to "Add a new Course", new_course_path %></h3>
+<hr>
+  <h2>You can see all courses here</h2>
 <% @courses.each do |c| %>
-  <h2><%= c.name %></h2>
-  <h3><%= link_to 'view', c %></h3>
+  <h4><%= c.name %></h4>
+  <h5><%= link_to 'view', c %></h5>
 <% end %>
+</div>

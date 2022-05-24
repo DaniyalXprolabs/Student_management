@@ -1,20 +1,22 @@
-<h1>Students Detail</h1>
-<p><strong>First Name:</strong><%= @student.first_name %></p>
-<br>
-<p><strong>Last Name:</strong><%= @student.last_name %></p>
-<br>
-<p><strong>Email:</strong><%= @student.email %></p>
-<br>
-<p><strong>Gender:</strong><%= @student.gender %></p>
-<br>
-<p><strong>Student has:</strong><%= @student.blogs.count %> blogs</p>
-<br>
-<p><strong>Student has:</strong><%= @student.courses.count %> courses</p>
-<br>
-<p><strong>Number of Projects student working: </strong><%= @student.projects.count %>  </p>
-<br>
+<div class="container" style="margin: 30px;">
+<h2 class="text-center">Students Detail</h2>
+<h3><strong>First Name:</strong> <%= @student.first_name %></h3>
+<hr>
+<h3><strong>Last Name:</strong> <%= @student.last_name %></h3>
+<hr>
+<h3><strong>Email:</strong> <%= @student.email %></h3>
+<hr>
+<h3><strong>Gender:</strong> <%= @student.gender %></h3>
+<hr>
+<h3><strong>Student has:</strong> <%= @student.blogs.count %> blogs</h3>
+<hr>
+<h3><strong>Student has:</strong> <%= @student.courses.count %> courses</h3>
+<hr>
+<h3><strong>Number of Projects student working: </strong> <%= @student.projects.count %>  </h3>
+<hr>
 <%= link_to "Back to Home", root_path %>
 <br>
 <%= link_to "Edit the Student", edit_student_path(@student) %>
 <br>
 <%= link_to "Delete the Student",  @student,method: :delete , data:{confirm:"Are you sure to delete student"} %>
+</div>
