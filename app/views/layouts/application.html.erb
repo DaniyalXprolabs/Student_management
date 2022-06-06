@@ -22,10 +22,14 @@
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
           <h4 class="active" style="margin:20px;"><%= link_to "Home", root_path %> </h4>        </li>
+        <li class="nav-item active">
+          <h4 class="active" style="margin:20px;"><%= link_to "About us", patient_path %> </h4>        </li>
         <li class="nav-item">
           <h4 class="active" style="margin:20px;"><%= link_to "Courses", courses_path %> </h4>        </li>
         <li class="nav-item">
-          <h4 class="active" style="margin:20px;"><%= link_to "Student", students_path %> </h4>        </li>
+          <h4 class="active" style="margin:20px;"><%= link_to "Students", students_path %> </h4>        </li>
+              <li class="nav-item">
+          <h4 class="active" style="margin:20px;"><%= link_to "Check Active Student", active_students_path  %> </h4>        </li>
       </ul>
     </div>
   </nav>

@@ -1,12 +1,12 @@
 <div class="container" style="margin: 30px;">
 <h2 class="text-center">Students Detail</h2>
-<h3><strong>First Name:</strong> <%= @student.first_name %></h3>
+  <div class="container" style="margin:20px">
+    <%= image_tag(@student.image, alt: "rss feed", height: 300, width: 300) %>  </div>
+ <h3><strong>First Name:</strong> <%= @student.first_name %></h3>
 <hr>
 <h3><strong>Last Name:</strong> <%= @student.last_name %></h3>
 <hr>
-<h3><strong>Email:</strong> <%= @student.email %></h3>
 <hr>
-<h3><strong>Gender:</strong> <%= @student.gender %></h3>
 <hr>
 <h3><strong>Student has:</strong> <%= @student.blogs.count %> blogs</h3>
 <hr>
@@ -15,6 +15,8 @@
 <h3><strong>Number of Projects student working: </strong> <%= @student.projects.count %>  </h3>
 <hr>
 <%= link_to "Back to Home", root_path %>
+<hr>
+<%= link_to "Check Personal Details", profile_student_path(@student) %>
 <br>
 <%= link_to "Edit the Student", edit_student_path(@student) %>
 <br>

@@ -1,0 +1,3 @@
+class Admin::Articles_Controller<ApplicationController
+
+end

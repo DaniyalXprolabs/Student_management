@@ -1,0 +1,3 @@
+class Admin::Comments_Controller<ApplicationController
+
+end

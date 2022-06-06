@@ -1,5 +1,5 @@
 class StudentsController < ApplicationController
-  before_action :find_id, only: [:show,:destroy,:edit,:update]
+  before_action :find_id, only: [:show,:destroy,:edit,:update,:profile]
   def index
     #Returning all Students
     @students=Student.all.order(:id)
@@ -36,16 +36,23 @@ class StudentsController < ApplicationController
     #@students=Student.order(id: :desc).limit(1).offset(1)
     #@students=Student.where("id>10").order(:first_name).
     #@students=Student.where(id:1..10).order(id: :asc)
-
-
-
   end
 
+  def about
+  end
+
+  def profile
+
+  end
   def new
     @student=Student.new
   end
 
   def show
+  end
+
+  def active
+    @students=Student.where("gender = ? OR gender=?" ,'Male','Female').order(id: :asc)
   end
 
   def create
@@ -79,6 +86,6 @@ class StudentsController < ApplicationController
     @student=Student.find(params[:id])
   end
   def students_params
-    params.require(:student).permit(:first_name,:last_name,:email,:gender)
+    params.require(:student).permit(:first_name,:last_name,:email,:gender, :image)
   end
 end
