@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :teachers
   resources :projects
   root "pages#index"
   get 'students/about', to: 'students#about', as: 'patient'

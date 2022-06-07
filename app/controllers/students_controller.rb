@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :find_id, only: [:show,:destroy,:edit,:update,:profile]
+  before_action :authenticate_teacher!, only: [:edit, :update, :destroy,:show]
   def index
     #Returning all Students
     @students=Student.all.order(:id)

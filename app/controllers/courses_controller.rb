@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :getCourse_id, only: [:show,:destroy,:edit,:update]
+  before_action :authenticate_teacher!, only: [:edit, :update, :destroy,:show, :new,:create]
   def index
     @courses=Course.all
   end

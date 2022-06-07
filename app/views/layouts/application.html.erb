@@ -13,28 +13,50 @@
   <body>
 
   <!--Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <h2 style="margin: 30px; font-size: 20px;"><%= link_to "Student Management System", root_path %></h2><button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#" style="margin: 10px;">
+      <%= image_tag("logo.png", alt: "rss feed", height: 100, width: 100) %>
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav mr-auto text-white">
         <li class="nav-item active">
-          <h4 class="active" style="margin:20px;"><%= link_to "Home", root_path %> </h4>        </li>
+          <%= link_to "Home", root_path, class: 'nav-link text-white' ,style: 'font-size:25px; margin:20px;' %>
+         </li>
         <li class="nav-item active">
-          <h4 class="active" style="margin:20px;"><%= link_to "About us", patient_path %> </h4>        </li>
-        <li class="nav-item">
-          <h4 class="active" style="margin:20px;"><%= link_to "Courses", courses_path %> </h4>        </li>
-        <li class="nav-item">
-          <h4 class="active" style="margin:20px;"><%= link_to "Students", students_path %> </h4>        </li>
-              <li class="nav-item">
-          <h4 class="active" style="margin:20px;"><%= link_to "Check Active Student", active_students_path  %> </h4>        </li>
+          <%= link_to "About", patient_path, class: 'nav-link text-white' ,style: 'font-size:25px; margin:20px;' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Students", students_path, class: 'nav-link text-white' ,style: 'font-size:25px; margin:20px;' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "Courses", courses_path, class: 'nav-link text-white' ,style: 'font-size:25px; margin:20px;' %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "A.Students", active_students_path, class: 'nav-link text-white' ,style: 'font-size:25px; margin:20px;' %>
+        </li>
+
       </ul>
     </div>
+    <% if teacher_signed_in? %>
+      <h5 class="text-white" style="font-size:15px;">
+        <%= current_teacher.email %>
+      </h5>
+      <%= link_to "Logout",destroy_teacher_session_path,method: :delete,  class: 'btn btn-danger text-white', style: 'margin:10px;' %>
+      <%= link_to "Account Settings",edit_teacher_registration_path,   class: 'btn btn-danger text-white', style: 'margin:10px;' %>
+    <% else %>
+      <%= link_to "Login",new_teacher_session_path,  class: 'btn btn-success text-white', style: 'margin:10px;' %>
+      <%= link_to "Signup",new_teacher_registration_path,  class: 'btn btn-outline-success text-white', style: 'margin:10px;' %>
+    <% end %>
   </nav>
-
+  <!-- flash messages -->
+   <h2 class="notice text-center"><%= notice %></h2>
+  <h2 class="alert text-center"><%= alert %></h2>
     <%= yield %>
+
 
   <footer id="sticky-footer" class="flex-shrink-0 py-4">
     <div class="container text-center">

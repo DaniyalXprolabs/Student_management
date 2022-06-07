@@ -2,8 +2,10 @@
 <div class="container text-center">
 <hr>
 <h4>Listing Students</h4>
-  <hr>
-  <button type="button" class="btn btn-success"><%= link_to "Add a new Student", new_student_path %></button>
+  <% if teacher_signed_in? %>
+    <hr>
+    <%= link_to "Add a new Student", new_student_path ,class:"btn btn-success text-white" %>
+<% end %>
 <hr>
 </div>
 <div class="container">
